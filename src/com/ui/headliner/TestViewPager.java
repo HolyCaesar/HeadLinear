@@ -4,18 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class TestViewPager extends Activity {
 	private ViewPager myViewPager;
+	private PagerTitleStrip mPagerTitleStrip;
+	final ArrayList<String> titles = new ArrayList<String>();
 
 	private MyPagerAdapter myAdapter;
 	
@@ -25,10 +31,20 @@ public class TestViewPager extends Activity {
 	private View layout2 = null;
 	private View layout3 = null;
 	
+	private Button btn = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_test_view_pager);
+		
+		btn = (Button) this.findViewById(R.id.mainPageBtn);
+		btn.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				Intent intent = new Intent(TestViewPager.this, MainActivity.class);
+				startActivity(intent);
+			}
+		});
 		
 		myAdapter = new MyPagerAdapter();
 		myViewPager = (ViewPager) findViewById(R.id.viewpagerLayout);
@@ -38,53 +54,21 @@ public class TestViewPager extends Activity {
         mInflater = getLayoutInflater();
         layout1 = mInflater.inflate(R.layout.layout1, null);
         layout2 = mInflater.inflate(R.layout.layout2, null);
-        layout3 = mInflater.inflate(R.layout.layout3, null);
-       
+        layout3 = mInflater.inflate(R.layout.layout3, null);       
         mListViews.add(layout1);
         mListViews.add(layout2);
         mListViews.add(layout3);
         
-        myViewPager.setCurrentItem(1);
+        mPagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pagerTitle);
         
-        EditText v2EditText = (EditText)layout2.findViewById(R.id.editText1);
-        v2EditText.setText("动态设置第二个view的值");
+        titles.add("tab1");
+        titles.add("tab2");
+        titles.add("tab3");
         
-        myViewPager.setOnPageChangeListener(new OnPageChangeListener() {
-			
-			public void onPageSelected(int arg0) {
-				Log.d("k", "onPageSelected - " + arg0);
-				View v = mListViews.get(arg0);
-				EditText editText = (EditText)v.findViewById(R.id.editText1);
-				editText.setText("动态设置#"+arg0+"edittext控件的值");
-			}
-			
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				Log.d("k", "onPageScrolled - " + arg0);
-			}
-			
-			public void onPageScrollStateChanged(int arg0) {
-				Log.d("k", "onPageScrollStateChanged - " + arg0);
-				/**
-			     * Indicates that the pager is in an idle, settled state. The current page
-			     * is fully in view and no animation is in progress.
-			     */
-			    //public static final int SCROLL_STATE_IDLE = 0;
-			    /**
-			     * Indicates that the pager is currently being dragged by the user.
-			     */
-			    //public static final int SCROLL_STATE_DRAGGING = 1;
-			    /**
-			     * Indicates that the pager is in the process of settling to a final position.
-			     */
-			    //public static final int SCROLL_STATE_SETTLING = 2;
-
-			}
-		});
-        
+        myViewPager.setCurrentItem(0);
 	}
 	
     private class MyPagerAdapter extends PagerAdapter{
-
 		@Override
 		public void destroyItem(View arg0, int arg1, Object arg2) {
 			Log.d("k", "destroyItem");
@@ -114,6 +98,12 @@ public class TestViewPager extends Activity {
 			Log.d("k", "isViewFromObject");
 			return arg0==(arg1);
 		}
+		
+		@Override
+		public CharSequence getPageTitle(int position) {
+			return titles.get(position);
+		}
+
 
 		@Override
 		public void restoreState(Parcelable arg0, ClassLoader arg1) {
