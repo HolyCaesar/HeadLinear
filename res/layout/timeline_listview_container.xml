@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ListView android:id="@+id/ListContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:drawSelectorOnTop="false"
+        android:layout_marginBottom="60dip"
+        android:cacheColorHint="#11111111" />
+    
+</RelativeLayout>
