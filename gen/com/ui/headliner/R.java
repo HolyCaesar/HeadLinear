@@ -18,26 +18,33 @@ public final class R {
         public static final int shinku=0x7f020004;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f070001;
-        public static final int imageView1=0x7f070006;
-        public static final int mainPageBtn=0x7f070004;
-        public static final int menu_settings=0x7f070007;
-        public static final int pagerTitle=0x7f070003;
-        public static final int textView1=0x7f070005;
-        public static final int viewPagerButton=0x7f070000;
-        public static final int viewpagerLayout=0x7f070002;
+        public static final int imageButton01=0x7f070004;
+        public static final int imageButton02=0x7f070005;
+        public static final int imageButton03=0x7f070006;
+        public static final int imageButton04=0x7f070007;
+        public static final int imageButton1=0x7f07000a;
+        public static final int imageButton2=0x7f07000c;
+        public static final int imageButton3=0x7f07000b;
+        public static final int imageButton4=0x7f07000d;
+        public static final int imageView1=0x7f07000f;
+        public static final int mainTopicLinearLayout=0x7f070009;
+        public static final int mainTopicScrollView=0x7f070008;
+        public static final int menuitem1=0x7f070010;
+        public static final int pagerTitle=0x7f070001;
+        public static final int search=0x7f070011;
+        public static final int textView1=0x7f07000e;
+        public static final int trendsLinearLayout=0x7f070003;
+        public static final int trendsScrollView=0x7f070002;
+        public static final int viewpagerLayout=0x7f070000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_test_view_pager=0x7f030001;
-        public static final int layout1=0x7f030002;
-        public static final int layout2=0x7f030003;
-        public static final int layout3=0x7f030004;
+        public static final int layout1=0x7f030001;
+        public static final int layout2=0x7f030002;
+        public static final int layout3=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_main=0x7f060000;
-        public static final int activity_test=0x7f060001;
-        public static final int activity_test_view_pager=0x7f060002;
+        public static final int custom_menu=0x7f060000;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
@@ -49,5 +56,6 @@ public final class R {
     }
     public static final class style {
         public static final int AppTheme=0x7f050000;
+        public static final int customAppTheme=0x7f050001;
     }
 }

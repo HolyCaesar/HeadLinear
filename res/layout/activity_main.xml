@@ -4,13 +4,113 @@
     android:layout_height="match_parent"
     android:gravity="fill_vertical" >
 
-    <Button
-        android:id="@+id/viewPagerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpagerLayout"
+        android:layout_width="280dp"
+        android:layout_height="210dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="117dp"
-        android:text="view pager" />
+        android:layout_marginTop="45dp"
+        android:gravity="center_horizontal" >
+
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pagerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" >
+        </android.support.v4.view.PagerTitleStrip>
+    </android.support.v4.view.ViewPager>
     
+    <HorizontalScrollView
+        android:id="@+id/trendsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/viewpagerLayout"
+        android:layout_marginTop="24dp"
+        android:fadingEdge="@null"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/trendsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" >
+
+            <ImageButton
+                android:id="@+id/imageButton01"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageButton
+                android:id="@+id/imageButton02"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+            
+            <ImageButton
+                android:id="@+id/imageButton03"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+            
+            <ImageButton
+                android:id="@+id/imageButton04"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/mainTopicScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="60dp"
+        android:fadingEdge="@null"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/mainTopicLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp" >
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
 </RelativeLayout>
