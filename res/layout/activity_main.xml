@@ -18,7 +18,7 @@
         android:layout_marginLeft="0dip"
         android:layout_weight="1"
         android:onClick="testMessage"
-        android:text="Button" />
+        android:text="Test" />
     
     <Button
         android:id="@+id/favorBtn"

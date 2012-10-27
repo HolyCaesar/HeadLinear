@@ -8,6 +8,7 @@
         android:targetSdkVersion="15" />
 
     <application
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -20,14 +21,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity android:name="com.activities.headliner.TimeLineActivity" />
         <activity
-        	android:name=".TimeLineActivity" >
-        	<meta-data
-            	android:name="android.support.PARENT_ACTIVITY"
-            	android:value="com.example.myfirstapp.MainActivity" />
-    	</activity>
+            android:name=".com.activities.headliner.TimeLineActivity"
+            android:label="@string/test" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ui.headliner.MainActivity" />
+        </activity>
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_test" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.activities.headliner.TimeLineActivity"
+            android:label="@string/title_activity_time_line" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

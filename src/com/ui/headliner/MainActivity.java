@@ -24,6 +24,6 @@ public class MainActivity extends Activity {
     
     public void testMessage( View view ) {
     	Intent intent = new Intent( this, TimeLineActivity.class );
-    	
+    	startActivity( intent );
     }
 }
