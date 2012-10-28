@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class ListActivity extends CustomerActivity {
 
@@ -58,7 +60,7 @@ public class ListActivity extends CustomerActivity {
 				Log.d("list", (String) map.get("Abstract"));
 				Uri webpage = Uri.parse("http://www.android.com");
 				Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-//				startActivity(webIntent);
+				startActivity(webIntent);
 			}
 		});
 		
@@ -77,12 +79,30 @@ public class ListActivity extends CustomerActivity {
 	public boolean onContextItemSelected(MenuItem item) {
 	    AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
 	    switch (item.getItemId()) {
-	        case R.id.facebook:
+	        case R.id.facebook: {
 	            Log.d("contextMenu", info.id + "");
+	            Toast toast = Toast.makeText(getApplicationContext(), "share in facebook",
+	            	     Toast.LENGTH_SHORT);
+	            toast.setGravity(Gravity.CENTER, 0, 0);
+	            toast.show();
 	            return true;
-	        case R.id.twitter:
+	        }
+	        case R.id.twitter: {
 	        	Log.d("contextMenu", info.id + "");
+	        	Toast toast = Toast.makeText(getApplicationContext(), "share in twitter",
+	        		     Toast.LENGTH_SHORT);
+	        	toast.setGravity(Gravity.CENTER, 0, 0);
+	        	toast.show();
 	            return true;
+	        }
+	        case R.id.context_favorite: {
+	        	Log.d("contextMenu", info.id + "");
+	        	Toast toast = Toast.makeText(getApplicationContext(), "put it in favorite",
+	        		     Toast.LENGTH_SHORT);
+	        	toast.setGravity(Gravity.CENTER, 0, 0);
+	        	toast.show();
+	            return true;
+	        }
 	        default:
 	            return super.onContextItemSelected(item);
 	    }

@@ -3,6 +3,7 @@ package com.ui.headliner;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -17,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 
@@ -76,6 +78,13 @@ public class MainActivity extends CustomerActivity {
 
 		myViewPager.setCurrentItem(0);
     }
+    
+	@Override
+	protected void onStart() {
+		super.onStart();
+		ActionBar actionBar = this.getActionBar();
+		actionBar.setHomeButtonEnabled(false);
+	}
     
     private class MyPagerAdapter extends PagerAdapter {
 		@Override

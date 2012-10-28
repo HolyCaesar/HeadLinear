@@ -35,12 +35,13 @@ public class CustomerActivity extends Activity {
 			startActivity(intent);
 			return true;
 		}
+		case R.id.custom_favorite: {
+			return true;
+		}
+		case R.id.position: {
+			return true;
+		}
 		case R.id.search: {
-			
-			Intent intent = new Intent(this, MainActivity.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			intent.putExtra("search", "return from search");
-			startActivity(intent);
 			return true;
 		}
 		default:

@@ -21,6 +21,8 @@ public final class R {
         public static final int ItemAbstract=0x7f070014;
         public static final int ItemShare=0x7f070015;
         public static final int ItemTitle=0x7f070013;
+        public static final int context_favorite=0x7f070018;
+        public static final int custom_favorite=0x7f07001a;
         public static final int facebook=0x7f070016;
         public static final int imageButton01=0x7f070006;
         public static final int imageButton02=0x7f070007;
@@ -35,9 +37,9 @@ public final class R {
         public static final int list_item_layout=0x7f070012;
         public static final int mainTopicLinearLayout=0x7f07000b;
         public static final int mainTopicScrollView=0x7f07000a;
-        public static final int menuitem1=0x7f070018;
         public static final int news_list=0x7f070001;
         public static final int pagerTitle=0x7f070003;
+        public static final int position=0x7f07001b;
         public static final int search=0x7f070019;
         public static final int textView1=0x7f070010;
         public static final int trendsLinearLayout=0x7f070005;
