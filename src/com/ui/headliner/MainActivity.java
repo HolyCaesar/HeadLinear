@@ -3,6 +3,7 @@ package com.ui.headliner;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -32,15 +33,16 @@ public class MainActivity extends CustomerActivity {
 	private View layout2 = null;
 	private View layout3 = null;
 	
-	private LinearLayout linearLayout;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);  
         
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent); 
+        
         initPageViewer();
-//        initMainTopics();
     }
     
     public void initPageViewer() {
@@ -65,20 +67,6 @@ public class MainActivity extends CustomerActivity {
 
 		myViewPager.setCurrentItem(0);
     }
-
-//    public void initMainTopics() {
-//    	linearLayout = (LinearLayout) findViewById(R.id.mainTopicLinearLayout);
-//		List<ImageView> imageViews = new ArrayList<ImageView>();		 
-//		for (int i = 0; i < 4; i++) {
-//			ImageView imageView = new ImageView(this);
-//			imageView.setImageResource(R.drawable.kuroshiro);
-//			imageView.setFadingEdgeLength(10);
-//			imageView.setId(i);
-//			imageView.setPadding(1, 1, 1, 1);
-//			imageViews.add(imageView);
-//			linearLayout.addView(imageView);
-//		}
-//    }
     
     private class MyPagerAdapter extends PagerAdapter {
 		@Override
