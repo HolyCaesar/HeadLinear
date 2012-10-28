@@ -1,13 +1,14 @@
 package com.ui.headliner;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
-public class CustomerActivity extends FragmentActivity {
+public class CustomerActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

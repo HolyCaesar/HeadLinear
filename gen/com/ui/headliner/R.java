@@ -21,6 +21,7 @@ public final class R {
         public static final int ItemAbstract=0x7f070014;
         public static final int ItemShare=0x7f070015;
         public static final int ItemTitle=0x7f070013;
+        public static final int facebook=0x7f070016;
         public static final int imageButton01=0x7f070006;
         public static final int imageButton02=0x7f070007;
         public static final int imageButton03=0x7f070008;
@@ -34,14 +35,14 @@ public final class R {
         public static final int list_item_layout=0x7f070012;
         public static final int mainTopicLinearLayout=0x7f07000b;
         public static final int mainTopicScrollView=0x7f07000a;
-        public static final int menu_settings=0x7f070016;
-        public static final int menuitem1=0x7f070017;
+        public static final int menuitem1=0x7f070018;
         public static final int news_list=0x7f070001;
         public static final int pagerTitle=0x7f070003;
-        public static final int search=0x7f070018;
+        public static final int search=0x7f070019;
         public static final int textView1=0x7f070010;
         public static final int trendsLinearLayout=0x7f070005;
         public static final int trendsScrollView=0x7f070004;
+        public static final int twitter=0x7f070017;
         public static final int viewpagerLayout=0x7f070002;
     }
     public static final class layout {
@@ -53,7 +54,7 @@ public final class R {
         public static final int listitem=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_list=0x7f060000;
+        public static final int context_menu=0x7f060000;
         public static final int custom_menu=0x7f060001;
     }
     public static final class string {
@@ -63,6 +64,7 @@ public final class R {
         public static final int share=0x7f040007;
         public static final int title_activity_list=0x7f040006;
         public static final int title_activity_main=0x7f040003;
+        public static final int title_activity_news=0x7f040008;
         public static final int title_activity_test=0x7f040004;
         public static final int title_activity_test_view_pager=0x7f040005;
     }

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,7 +23,7 @@ import android.widget.LinearLayout.LayoutParams;
 public class MainActivity extends CustomerActivity {
 
 	private ViewPager myViewPager;
-	private PagerTitleStrip mPagerTitleStrip;
+//	private PagerTitleStrip mPagerTitleStrip;
 	final ArrayList<String> titles = new ArrayList<String>();
 
 	private MyPagerAdapter myAdapter;
@@ -39,9 +40,10 @@ public class MainActivity extends CustomerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);  
         
-        Intent intent = new Intent(this, ListActivity.class);
-        startActivity(intent); 
         
+        
+		
+		
         initPageViewer();
     }
     
@@ -53,13 +55,20 @@ public class MainActivity extends CustomerActivity {
 		mListViews = new ArrayList<View>();
 		mInflater = getLayoutInflater();
 		layout1 = mInflater.inflate(R.layout.layout1, null);
+		layout1.setOnClickListener(new OnClickListener() {
+			public void onClick(View view) {
+				Intent intent = new Intent(MainActivity.this, ListActivity.class);
+				startActivity(intent);
+			}
+			
+		});
 		layout2 = mInflater.inflate(R.layout.layout2, null);
 		layout3 = mInflater.inflate(R.layout.layout3, null);
 		mListViews.add(layout1);
 		mListViews.add(layout2);
 		mListViews.add(layout3);
 
-		mPagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pagerTitle);
+//		mPagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pagerTitle);
 
 		titles.add("tab1");
 		titles.add("tab2");

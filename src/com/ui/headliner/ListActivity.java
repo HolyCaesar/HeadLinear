@@ -3,9 +3,20 @@ package com.ui.headliner;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -14,6 +25,7 @@ public class ListActivity extends CustomerActivity {
 	SimpleAdapter listItemAdapter;
 	ArrayList<HashMap<String, Object>> listItem;
 	ListView newsList;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,17 +45,47 @@ public class ListActivity extends CustomerActivity {
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("Title", "title " + i);
 			map.put("Abstract", Abstract);
-			map.put("Share", "Share"); 
+			map.put("Share", "Share");
 			listItem.add(map);
 		}
 		listItemAdapter.notifyDataSetChanged();
+
+		newsList.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				// TODO Auto-generated method stub
+				HashMap<String, Object> map = listItem.get(position);
+				Log.d("list", (String) map.get("Abstract"));
+				Uri webpage = Uri.parse("http://www.android.com");
+				Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+//				startActivity(webIntent);
+			}
+		});
 		
-		newsList.setOnItemClickListener(listener)
+		registerForContextMenu(newsList);
+	}
+	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+	                                ContextMenuInfo menuInfo) {
+	    super.onCreateContextMenu(menu, v, menuInfo);
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.context_menu, menu);
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+	    AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+	    switch (item.getItemId()) {
+	        case R.id.facebook:
+	            Log.d("contextMenu", info.id + "");
+	            return true;
+	        case R.id.twitter:
+	        	Log.d("contextMenu", info.id + "");
+	            return true;
+	        default:
+	            return super.onContextItemSelected(item);
+	    }
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_list, menu);
-		return true;
-	}
 }

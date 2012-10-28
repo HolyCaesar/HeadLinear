@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/ItemTitle"
+        android:focusable="false"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="title"
@@ -17,6 +18,7 @@
 
     <TextView
         android:id="@+id/ItemAbstract"
+        android:focusable="false"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ItemTitle"
@@ -26,6 +28,7 @@
     <TextView
         android:id="@+id/ItemShare"
         android:layout_width="40dp"
+        android:focusable="false"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/ItemAbstract"
         android:layout_below="@+id/ItemAbstract"
